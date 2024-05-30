@@ -1,0 +1,7 @@
+langchain
+openai
+streamlit
+crewai
+crewai-tools
+langchain
+langchain_community
