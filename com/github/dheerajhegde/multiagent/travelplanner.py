@@ -13,7 +13,7 @@ class TravelPlanner():
         self.departure_date = args_dict.get("departure_date")
         self.departure_time = args_dict.get("departure_time")
         self.activities = args_dict.get("activities")
-        self.food_preference = args_dict.get("food_preference")
+        self.foodPreference = args_dict.get("food_preference")
 
         #self.api_key="AIzaSyDRXbm3xf9lH2Y5A7Sv97DeRhzk0-8PoRk"
         self.points_of_interest = tools.PointsOfInterest()
@@ -48,8 +48,8 @@ class TravelPlanner():
                 "departure date - {departure_date} "
                 "departure time - {departure_time} "
                 "activities the person is interested in - {activities} "
-                "lunch preference - {food_preference} "
-                "dinner preference - {food_preference} "
+                "lunch preference - {foodPreference} "
+                "dinner preference - {foodPreference} "
                 "Based on information above, please list out the best places to visit, "
                 "in the city, average time to spend in each place, and the busy times. "
                 "You will have to work with the food critic to find places to eat at "
@@ -81,8 +81,8 @@ class TravelPlanner():
                 "departure date - {departure_date} "
                 "departure time - {departure_time} "
                 "activities the person is interested in - {activities} "
-                "lunch preference - {food_preference} "
-                "dinner preference - {food_preference} "
+                "lunch preference - {foodPreference} "
+                "dinner preference - {foodPreference} "
                 "You will be proivided with a list of places the person will be visiting. "
                 "You need to work with the local guide and planned who will be deciding the places "
                 "to visit and scheduled for the visit."
@@ -96,7 +96,7 @@ class TravelPlanner():
             allow_delegation=True
         )
         planner = Agent(
-            role="Expert travel planner who can help you plan your trip.",
+            role="Expert travel planner who can help you create itinerary for your trip.",
             goal="Put together the best itinerary based on the schedule, places to visit, and places to eat at.",
             tools=[self.points_of_interest, self.information_on_point_of_interest, self.busy_times, self.food],
             backstory=(
@@ -115,8 +115,8 @@ class TravelPlanner():
                 "departure date - {departure_date} "
                 "departure time - {departure_time} "
                 "activities the person is interested in - {activities} "
-                "lunch preference - {food_preference} "
-                "dinner preference - {food_preference} "
+                "lunch preference - {foodPreference} "
+                "dinner preference - {foodPreference} "
                 "Local guide will also provide you with the places to visit with information "
                 "about the places to visit the average time of visit and the busy times. "
                 "You will also know the recommended places to eat lunch and dinner. "
@@ -145,7 +145,7 @@ class TravelPlanner():
             "departure_date": self.departure_date,
             "departure_time": self.departure_time,
             "activities": self.activities,
-            "food_preference": self.food_preference
+            "foodPreference": self.foodPreference
         }
         planing_crew = Crew(
             agents=[local_guide, foodie, planner],

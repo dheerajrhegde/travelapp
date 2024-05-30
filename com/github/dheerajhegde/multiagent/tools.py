@@ -52,5 +52,5 @@ class Food(BaseTool):
     def set_args(self, args_dict):
         self.args_dict = args_dict"""
 
-    def _run(self, city, food_preference):
-        return gs.find_place(city, food_preference)
+    def _run(self, city, foodPreference):
+        return gs.find_place(city, foodPreference)

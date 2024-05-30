@@ -5,7 +5,7 @@ import requests
 
 # urls for google api web service
 BASE_URL = "https://maps.googleapis.com/maps/api/place/"
-api_key="AIzaSyDRXbm3xf9lH2Y5A7Sv97DeRhzk0-8PoRk"
+api_key="your API key here"
 
 USER_AGENT = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_1) "
                             "AppleWebKit/537.36 (KHTML, like Gecko) "
