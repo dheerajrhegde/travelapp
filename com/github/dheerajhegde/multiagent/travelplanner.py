@@ -39,16 +39,11 @@ class TravelPlanner():
         self.departure_time = args_dict.get("departure_time")
         self.activities = args_dict.get("activities")
         self.foodPreference = args_dict.get("foodPreference")
-
-        #self.api_key="AIzaSyDRXbm3xf9lH2Y5A7Sv97DeRhzk0-8PoRk"
         self.points_of_interest = tools.PointsOfInterest()
-        #self.points_of_interest.set_args(args_dict)
         self.information_on_point_of_interest = tools.InformationOnPointOfInterest()
-        #self.information_on_point_of_interest.set_args(args_dict)
         self.busy_times = tools.BusyTimes()
-        #self.busy_times.set_args(args_dict)
         self.food = tools.Food()
-        #self.food.set_args(args_dict)
+
 
     def plan(self):
         """
