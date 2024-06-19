@@ -1,11 +1,11 @@
 import urllib.parse
 import urllib.request
-import json, re
+import json, re, os
 import requests
 
 # urls for google api web service
 BASE_URL = "https://maps.googleapis.com/maps/api/place/"
-api_key="your API key here"
+api_key=os.getenv("GOOGLE_MAP_API_KEY")
 
 USER_AGENT = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_1) "
                             "AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -127,6 +127,15 @@ def find_place(city, activities):
     return json.loads(response.text)
 
 def get_place_operating_hours(place_id):
+    """
+    The Google Places API v1 allows developers to interact with various endpoints to retrieve
+    information about places, such as businesses, points of interest, and geographic locations.
+
+    :param place_id:
+    :return: response from google places API
+    """
+
+
     # Define the API endpoint
     url = 'https://places.googleapis.com/v1/places/'+place_id
     # Define the headers
